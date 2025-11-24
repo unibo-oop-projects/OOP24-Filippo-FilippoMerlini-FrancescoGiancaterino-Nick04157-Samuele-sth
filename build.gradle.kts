@@ -5,13 +5,16 @@
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/8.14.2/userguide/building_java_projects.html in the Gradle documentation.
  */
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
-
 plugins {
     java
     application
     id("com.github.johnrengelman.shadow") version "8.1.1"
+
+    id("org.danilopianini.unibo-oop-gradle-plugin") version "1.1.71"
 }
+
+java { toolchain { languageVersion.set(JavaLanguageVersion.of(21)) } }
+
 
 repositories {
     // Use Maven Central for resolving dependencies.
